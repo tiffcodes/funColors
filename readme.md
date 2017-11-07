@@ -10,6 +10,13 @@
 
 **Example:** `https://fun-fun-colors.herokuapp.com/randomColor`
 
+
+**NOTE** Please use the proper headers. This will work:
+`headers: {
+	'Accept': 'application/json',
+	'Content-Type': 'application/json'
+}`
+
 #### Sample Response 
 
 #### Success
@@ -33,6 +40,12 @@
 ### `color/:id`
 
 **GET** _gets a specific color from the list_
+
+**NOTE** Please use the proper headers. This will work:
+`headers: {
+	'Accept': 'application/json',
+	'Content-Type': 'application/json'
+}`
 
 This will return a color from the CSS Colors. The list is in alphabetical order. The possible numbers range from **0 to 146**
 
@@ -66,6 +79,12 @@ Params | Value | Description | Valid format example
 ### `allColors`
 
 **GET** _gets an array of all colors_
+
+**NOTE** Please use the proper headers. This will work:
+`headers: {
+	'Accept': 'application/json',
+	'Content-Type': 'application/json'
+}`
 
 This will return an array of all CSS colors. The list is in alphabetical order.
 
