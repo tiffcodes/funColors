@@ -8,7 +8,7 @@
 
 **GET** _gets a random color_
 
-**Example:** `https://color-api.herokuapp.com/randomColor`
+**Example:** `https://fun-fun-colors.herokuapp.com/randomColor`
 
 #### Sample Response 
 
@@ -42,7 +42,7 @@ Params | Value | Description | Valid format example
 `id` : number | `the color to return` | Id of the color | 22
 
 
-**Example:** `https://color-api.herokuapp.com/color/22`
+**Example:** `https://fun-fun-colors.herokuapp.com/color/22`
 
 
 #### Success
@@ -71,7 +71,7 @@ This will return an array of all CSS colors. The list is in alphabetical order.
 
 
 
-**Example:** `https://color-api.herokuapp.com/allColors`
+**Example:** `https://fun-fun-colors.herokuapp.com/allColors`
 
 
 #### Success
