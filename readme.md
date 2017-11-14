@@ -59,7 +59,7 @@ Params | Value | Description | Valid format example
 #### Success
 
 	{
-		color: 'darkcyan',
+		colorIndex: 22,
 		status: 200
 	}
 
@@ -252,6 +252,7 @@ This will return an array of all CSS colors. The list is in alphabetical order.
 			"plum",
 			"powderblue",
 			"purple",
+			"rebeccapurple",
 			"red",
 			"rosybrown",
 			"royalblue",
