@@ -164,9 +164,9 @@ app.colors = [
 // 	return colorToCheck.includes(color);
 // }
 
-function includes(color) {
-	return (colorToCheck) => {
-		return colorToCheck.includes(color);
+function includes(colorQuery) {
+	return (color) => {
+		return color.includes(colorQuery);
 	}
 }
 
@@ -179,11 +179,11 @@ app.get('/colorcheck', (req, res) => {
 			status: 200
 		});
 	} else {
-		const maybeIndex = app.colors.findIndex(includes(colorString));
+		const bestIndex = app.colors.findIndex(includes(colorString));
 
-		if (maybeIndex >= 0) {
+		if (bestIndex >= 0) {
 			res.send({
-				colorIndex: maybeIndex,
+				colorIndex: bestIndex,
 				status: 200
 			});
 		} else {
