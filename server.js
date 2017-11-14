@@ -160,10 +160,6 @@ app.colors = [
 	"yellowgreen"
 ];
 
-// function includes(colorToCheck, color) {
-// 	return colorToCheck.includes(color);
-// }
-
 function includes(colorQuery) {
 	return (color) => {
 		return color.includes(colorQuery);
@@ -173,6 +169,7 @@ function includes(colorQuery) {
 app.get('/colorcheck', (req, res) => {
 	const colorString = req.query.q;
 	const indexOfColor = app.colors.indexOf(colorString);
+
 	if (indexOfColor >= 0) {
 		res.send({
 			colorIndex: indexOfColor,
@@ -199,7 +196,7 @@ app.get('/color/:id', (req, res) => {
 	const colorNumber = req.params.id;
 
 	res.send({
-		colorIndex: app.colors[colorNumber],
+		color: app.colors[colorNumber],
 		status: 200
 	});
 });
