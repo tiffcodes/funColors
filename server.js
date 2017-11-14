@@ -129,6 +129,7 @@ app.colors = [
 	"plum",
 	"powderblue",
 	"purple",
+	"rebeccapurple",
 	"red",
 	"rosybrown",
 	"royalblue",
@@ -159,11 +160,36 @@ app.colors = [
 	"yellowgreen"
 ];
 
+app.get('/colorCheck', (req, res) => {
+	const colorString = req.query.q;
+	const indexOfColor = app.colors.indexOf(colorString);
+	if (indexOfColor >= 0) {
+		res.send({
+			colorIndex: indexOfColor,
+			status: 200
+		});
+	} else {
+		function includes(colorToCheck) {
+			const includesColor = colorToCheck.includes(colorString);
+			if (includesColor) {
+				return colorToCheck;
+			} 
+		}
+		const maybeIndex = app.colors.findIndex(includes);
+		console.log(maybeIndex);
+		res.send({
+			colorIndex: app.colors[maybeIndex],
+			status: 200
+		});
+	}
+});
+
+
 app.get('/color/:id', (req, res) => {
 	const colorNumber = req.params.id;
 
 	res.send({
-		color: app.colors[colorNumber],
+		colorIndex: app.colors[colorNumber],
 		status: 200
 	});
 });
