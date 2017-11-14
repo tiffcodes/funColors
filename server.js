@@ -160,6 +160,16 @@ app.colors = [
 	"yellowgreen"
 ];
 
+// function includes(colorToCheck, color) {
+// 	return colorToCheck.includes(color);
+// }
+
+function includes(color) {
+	return (colorToCheck) => {
+		return colorToCheck.includes(color);
+	}
+}
+
 app.get('/colorCheck', (req, res) => {
 	const colorString = req.query.q;
 	const indexOfColor = app.colors.indexOf(colorString);
@@ -169,18 +179,19 @@ app.get('/colorCheck', (req, res) => {
 			status: 200
 		});
 	} else {
-		function includes(colorToCheck) {
-			const includesColor = colorToCheck.includes(colorString);
-			if (includesColor) {
-				return colorToCheck;
-			} 
+		const maybeIndex = app.colors.findIndex(includes(colorString));
+
+		if (maybeIndex >= 0) {
+			res.send({
+				colorIndex: maybeIndex,
+				status: 200
+			});
+		} else {
+			res.send({
+				colorIndex: 'doesnt exist',
+				status: 200
+			});
 		}
-		const maybeIndex = app.colors.findIndex(includes);
-		console.log(maybeIndex);
-		res.send({
-			colorIndex: app.colors[maybeIndex],
-			status: 200
-		});
 	}
 });
 
