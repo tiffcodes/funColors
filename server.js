@@ -170,7 +170,7 @@ function includes(color) {
 	}
 }
 
-app.get('/colorCheck', (req, res) => {
+app.get('/colorcheck', (req, res) => {
 	const colorString = req.query.q;
 	const indexOfColor = app.colors.indexOf(colorString);
 	if (indexOfColor >= 0) {
@@ -195,7 +195,6 @@ app.get('/colorCheck', (req, res) => {
 	}
 });
 
-
 app.get('/color/:id', (req, res) => {
 	const colorNumber = req.params.id;
 
@@ -205,7 +204,7 @@ app.get('/color/:id', (req, res) => {
 	});
 });
 
-app.get('/randomColor', (req, res) => {
+app.get('/randomcolor', (req, res) => {
 	const randomNumber = Math.floor( Math.random() * 147 );
 
 	res.send({
@@ -214,7 +213,7 @@ app.get('/randomColor', (req, res) => {
 	});
 });
 
-app.get('/allColors', (req, res) => {
+app.get('/allcolors', (req, res) => {
 	const colorNumber = req.param('color');
 
 	res.send({
