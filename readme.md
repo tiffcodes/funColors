@@ -4,11 +4,11 @@
 
 ## Random Color
 
-### `randomColor`
+### `randomcolor`
 
 **GET** _gets a random color_
 
-**Example:** `https://fun-fun-colors.herokuapp.com/randomColor`
+**Example:** `https://fun-fun-colors.herokuapp.com/randomcolor`
 
 
 **NOTE** Please use the proper headers. This will work:
@@ -111,7 +111,7 @@ Params | Value | Description | Valid format example
 
 ## All Colors
 
-### `allColors`
+### `allcolors`
 
 **GET** _gets an array of all colors_
 
@@ -125,7 +125,7 @@ This will return an array of all CSS colors. The list is in alphabetical order.
 
 
 
-**Example:** `https://fun-fun-colors.herokuapp.com/allColors`
+**Example:** `https://fun-fun-colors.herokuapp.com/allcolors`
 
 
 #### Success
