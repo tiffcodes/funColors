@@ -33,9 +33,44 @@
 		status: 500
 	}
 
+## Color by Name
+
+### `colorcheck`
+
+**GET** _gets a specific color from the list_
+
+**NOTE** Please use the proper headers. This will work:
+`headers: {
+	'Accept': 'application/json',
+	'Content-Type': 'application/json'
+}`
+
+This will return a color from the CSS Colors. The list is in alphabetical order. The possible numbers range from **0 to 146**
 
 
-## Color
+Params | Value | Description | Valid format example
+------ | ---- | ------ | ------
+`q` | string | `the color or part of the color to return the index of` | 22
+
+
+**Example:** `https://fun-fun-colors.herokuapp.com/colorcheck?q=dark` || `https://fun-fun-colors.herokuapp.com/colorcheck?q=darkcyan`
+
+
+#### Success
+
+	{
+		color: 'darkcyan',
+		status: 200
+	}
+
+#### Fail
+
+	{
+		error: 'Error message',
+		status: 500
+	}
+
+## Color by id
 
 ### `color/:id`
 
@@ -52,7 +87,7 @@ This will return a color from the CSS Colors. The list is in alphabetical order.
 
 Params | Value | Description | Valid format example
 ------ | ---- | ------ | ------
-`id` : number | `the color to return` | Id of the color | 22
+`id` | number | `the id/index of the color to return` | 22
 
 
 **Example:** `https://fun-fun-colors.herokuapp.com/color/22`
